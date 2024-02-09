@@ -7,6 +7,7 @@
     "dev": "tsc --build && node ."
   },
   "dependencies": {
+    "@google/generative-ai": "^0.2.0",
     "@mistralai/mistralai": "^0.0.7",
     "axios": "^1.6.2",
     "dotenv": "^16.3.1",

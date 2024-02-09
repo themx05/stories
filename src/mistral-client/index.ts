@@ -72,7 +72,6 @@ export class MistralClient {
         safe_mode?: boolean;
         random_seed?: number;
     }) {
-        console.log(params);
         return this.client.post("/chat/completions", JSON.stringify(params), {
             headers: {
                 "Content-Type": "application/json;charset=utf-8"
@@ -80,7 +79,8 @@ export class MistralClient {
             responseType: "json"
         })
             .then((res) => {
-                return res.data as CreateCompletionType;
+                let final = JSON.parse(res.data);
+                return final as CreateCompletionType;
             })
             .catch((err: AxiosError) => {
                 console.log(err);
